@@ -15,8 +15,10 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "This is Terrence CICD Practice!"', () => {
-      expect(appController.getCICD()).toBe('This is Terrence CICD Practice!');
+    it('should return "This is Terrence CICD Practice version 2!"', () => {
+      expect(appController.getCICD()).toBe(
+        'This is Terrence CICD Practice version 2!',
+      );
     });
   });
 });
