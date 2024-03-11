@@ -1,6 +1,6 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence', '.']
+    args: ['build', '-t', 'asia-southeast1-docker.pkg.dev/model-almanac-378716/imageterrence', '.']
   images:
-  - 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence'
+  - 'asia-southeast1-docker.pkg.dev/model-almanac-378716/imageterrence'
