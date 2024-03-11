@@ -1,45 +1,9 @@
-# steps:
-# # Build the container image
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/model-almanac-378716/imageterrence', '.']
-# # Push the container image to Container Registry
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/model-almanac-378716/imageterrence']
-# # Deploy container image to Cloud Run
-# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#   entrypoint: gcloud
-#   args: ['run', 'deploy', 'SERVICE-NAME', '--image', 'gcr.io/model-almanac-378716/IMAGE', '--region', 'REGION', '--platform', 'managed', '--port', '3000']
-# images:
-# - gcr.io/model-almanac-378716/imageterrence
-
-#   steps:
-#   # Build the container image
-#   - name: 'gcr.io/cloud-builders/docker'
-#     args: ['build', '-t', 'gcr.io/$PROJECT_ID/cloud-run-terrence:$COMMIT_SHA', '.']
-#   # Push the container image to Container Registry
-#   - name: 'gcr.io/cloud-builders/docker'
-#     args: ['push', 'gcr.io/$PROJECT_ID/cloud-run-terrence:$COMMIT_SHA']
-#   # Deploy container image to Cloud Run
-#   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#     entrypoint: gcloud
-#     args:
-#     - 'run'
-#     - 'deploy'
-#     - 'cloud-run-terrence'
-#     - '--image'
-#     - 'gcr.io/$PROJECT_ID/cloud-run-terrence:$COMMIT_SHA'
-#     - '--region'
-#     - 'asia-southeast1'
-#     - '--platform', 'managed', '--port', '3000'
-#   images:
-#   - 'gcr.io/$PROJECT_ID/cloud-run-terrence:$COMMIT_SHA'
-
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence', '.']
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/model-almanac-378716/image-terrence']
-    images:
+    args: ['push', 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence']
+  images:
   - 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence'
