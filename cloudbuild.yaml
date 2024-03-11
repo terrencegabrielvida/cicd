@@ -42,4 +42,4 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/model-almanac-378716/image-terrence']
     images:
-  - asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence
+  - 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence'
