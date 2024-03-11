@@ -5,5 +5,8 @@ steps:
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'image-terrence', '--image', 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence', '--region', 'asia-southeast1', '--platform', 'managed', '--port', '3000']
 images:
   - 'asia-southeast1-docker.pkg.dev/model-almanac-378716/artifact-registry-terrence/image-terrence'
